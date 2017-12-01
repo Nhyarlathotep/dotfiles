@@ -1,0 +1,214 @@
+[colors]
+colors = #1d2021
+background = #101617
+background-alt = #222
+foreground = #d0d0d0
+foreground-alt = #d0d0d0
+primary = #f3eed8
+secondary = #5f865f
+alert = #d68787
+
+[global/wm]
+margin-top = 10%
+margin-bottom = 10%
+
+[bar/top]
+font-0 = xos4 Terminus:size=15;3
+font-1 = FontAwesome:size=15;3
+
+top = true
+width = 100%
+height = 32
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-color = #fba922
+underline-size = 2
+
+border-bottom-size = 3
+border-bottom-color = $#333
+
+spacing = 1
+padding-left = 1
+padding-right = 1
+module-margin-left = 0
+module-margin-right = 1
+
+modules-left = i3
+modules-center = date
+modules-right =  volume battery cpu backlight redshift pacman menu
+
+tray-position = right
+tray-padding = 0
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= #ffb52a
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;10
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d/%m/%Y"
+time = "%H:%M "
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.foreground-alt}
+
+label = %date% %time%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-underline = #89ff29
+label = "   %percentage%% "
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-charging = <animation-charging><label-charging>
+format-charging-underline = #0a6cf5
+
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+;format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 500
+
+[module/backlight]
+type = internal/backlight
+format = <label>%
+label ="  %percentage% "
+card = intel_backlight
+format-underline = #ffb52a
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <bar-volume>
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+
+ramp-volume-foreground = ${root.foreground}
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = "sound muted"
+
+;Green Color
+;#89ff29
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #8A2BE2
+bar-volume-foreground-1 = #8A2BE2
+bar-volume-foreground-2 = #8A2BE2
+bar-volume-foreground-3 = #8A2BE2
+bar-volume-foreground-4 = #8A2BE2
+bar-volume-foreground-5 = #8A2BE2
+bar-volume-foreground-6 = #8A2BE2
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/pacman]
+type = custom/script
+interval = 1200
+format = <label>
+format-underline = #dc322f
+exec = ~/.config/polybar/pac_update.sh
+
+[module/redshift]
+type = custom/script
+interval = 5
+exec = ~/.config/polybar/redshift.sh
+
+[module/menu]
+type = custom/menu
+expand-right = true
+
+menu-0-0 = 
+menu-0-0-exec = ~/.config/polybar/lock.sh
+menu-0-1 = Poweroff
+menu-0-1-exec = poweroff
+menu-0-2 = Reboot
+menu-0-2-exec = reboot
+
+label-open = 
+label-close = 
+label-separator = " "
