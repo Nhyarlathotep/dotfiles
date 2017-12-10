@@ -15,4 +15,6 @@ Dependencies:
 - synaptic
 - termite
 
+- cool ls : community/exa
+
 Have fun !
