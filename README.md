@@ -16,5 +16,7 @@ Dependencies:
 - termite
 
 - cool ls : community/exa
+- Icon Theme : Flat Remix
+- Mouse Cursor : Captitaine Cursors
 
 Have fun !
