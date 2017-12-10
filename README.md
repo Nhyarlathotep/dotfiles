@@ -6,4 +6,6 @@ The repo contains my configuration files.
   <img src="Screen.png" alt="Screenshot">
 </p>
 
+<b Dependencies : b>
+
 Have fun !
