@@ -13,14 +13,15 @@ for_window [class="^.*"] border pixel 5
 #Floating Window
 for_window [class="Thunar"] floating enable
 for_window [class="Nautilus"] floating enable
+for_window [class="vlc"] floating enable
 
 
 gaps inner 10
-gaps outer 10
+gaps outer 5
 
 #If you want gaps to only be used if there is more than one container on the workspace, you can use
 #smart_gaps on
-#smart_borders on
+smart_borders on
 
 new_window normal
 
@@ -35,19 +36,19 @@ bindsym $mod+A kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -show-icons
 
 # Network Manager applet
 exec --no-startup-id nm-applet
 
 #Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Images/Wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.png
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #Opacity
-exec_always --no-startup-id compton
+exec_always --no-startup-id compton -f --config ~/.config/compton
 
 #redshift
 exec --no-startup-id redshift
@@ -175,24 +176,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-
-
 # Define colors
-set $border	#fba922
+#set $border	#fba922
+set $border	#d0d0d0B3
 set $wesh	#d75f87
-set $back	#2e2e2e
+set $back	#2e2e2eB3
 
-# Colors
-client.focused		$border	$border	$border	$border	$border
-client.focused_inactive $back	$back	$back	$back	$back
-client.unfocused	$back	$back	$back	$back	$back
-client.urgent		$wesh	$wesh	$wesh	$wesh	$wesh
-client.placeholder	$back	$back	$back	$back	$back
+# Colors                border  backgr. text    indicator child_border
+client.focused		$border	$border	$border	$border	  $border
+client.focused_inactive $back	$back	$back	$back	  $back
+client.unfocused	$back	$back	$back	$back	  $back
+client.urgent		$wesh	$wesh	$wesh	$wesh	  $wesh
+client.placeholder	$back	$back	$back	$back	  $back
 client.background 	$back
-
 
 # Sound fn keys
 exec_always --no-startup-id "amixer sset Master unmute"
@@ -202,3 +198,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 15%-"
 #Backlight fn keys
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -inc -10%"
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc +10-%"
+
+#Touchpad synaptic
+exec_always --no-startup-id synclient TapButton1=1
