@@ -17,6 +17,7 @@ Dependencies:
 - termite
 
 - cool ls : community/exa
+- pywal
 - Icon Theme : Flat Remix
 - Mouse Cursor : Captitaine Cursors
 
