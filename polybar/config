@@ -1,6 +1,7 @@
 [colors]
 colors = #1d2021
 background = #101617
+;background = #10161700 //transparency
 background-alt = #222
 foreground = #d0d0d0
 foreground-alt = #d0d0d0
@@ -164,7 +165,7 @@ ramp-volume-2 = ""
 
 ramp-volume-foreground = ${root.foreground}
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = "sound muted"
+label-muted = " muted"
 
 ;Green Color
 ;#89ff29
@@ -178,7 +179,7 @@ bar-volume-foreground-4 = #8A2BE2
 bar-volume-foreground-5 = #8A2BE2
 bar-volume-foreground-6 = #8A2BE2
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = 
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -206,8 +207,6 @@ menu-0-0 = 
 menu-0-0-exec = ~/.config/polybar/lock.sh
 menu-0-1 = Poweroff
 menu-0-1-exec = poweroff
-menu-0-2 = Reboot
-menu-0-2-exec = reboot
 
 label-open = 
 label-close = 
