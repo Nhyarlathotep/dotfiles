@@ -1,34 +1,72 @@
 [colors]
 font = Dina, regular 10
-foreground      = #d8d8d8
-foreground_bold = #d8d8d8
-cursor          = #d8d8d8
-background 	= #rgba(24, 24, 24, .98)
+foreground = #d8dee8
+background = #2f343f
+foreground_bold = #d0d6e0
+cursor = #b48ead
+cursor_foreground = #d8dee8
 
-#16 color space
-color0  = #181818
-color1  = #ab4642
-color2  = #a1b56c
-color3  = #f7ca88
-color4  = #7cafc2
-color5  = #ba8baf
-color6  = #86c1b9
-color7  = #d8d8d8
-color8  = #585858
-color9  = #ab4642
-color10 = #a1b56c
-color11 = #f7ca88
-color12 = #7cafc2
-color13 = #ba8baf
-color14 = #86c1b9
-color15 = #f8f8f8
+# black
+#color0  = #4b5262
+color8  = #434a5a
 
-#256 color space
-color16 = #dc9656
-color17 = #a16946
-color18 = #282828
-color19 = #383838
-####
-color20 = #b8b8b8
-####
-color21 = #e8e8e8
+# red
+color1  = #bf616a
+color9  = #b3555e
+
+# green
+color2  = #a3be8c
+color10 = #93ae7c
+
+# yellow
+color3  = #ebcb8b
+color11 = #dbbb7b
+
+# blue
+color4  = #81a1c1
+color12 = #7191b1
+
+# magenta
+color5  = #b48ead
+color13 = #a6809f
+
+# cyan
+color6  = #88c0d0
+color14 = #76aebe
+
+# white
+color7  = #e5e9f0
+color15 = #d1d5dc
+
+# foreground      = #d8d8d8
+# foreground_bold = #d8d8d8
+# cursor          = #d8d8d8
+#background 	= rgb(24, 24, 24)
+
+#  #16 color space
+  color0  = #181818
+#  color1  = #ab4642
+#  color2  = #a1b56c
+#  color3  = #f7ca88
+#  color4  = #7cafc2
+#  color5  = #ba8baf
+#  color6  = #86c1b9
+#  color7  = #d8d8d8
+#  color8  = #585858
+#  color9  = #ab4642
+#  color10 = #a1b56c
+#  color11 = #f7ca88
+#  color12 = #7cafc2
+#  color13 = #ba8baf
+# color14 = #86c1b9
+# color15 = #f8f8f8
+
+ # #256 color space
+ # color16 = #dc9656
+ # color17 = #a16946
+ # color18 = #282828
+ # color19 = #383838
+ # ####
+ # color20 = #b8b8b8
+ # ####
+ # color21 = #e8e8e8
